@@ -9,7 +9,11 @@
   border: rem(1) solid transparent;
   background:
     linear-gradient(var(--color-dark-10), var(--color-dark-10)) padding-box,
-    var(--gradient) border-box;
+    linear-gradient(
+        45deg,
+        var(--color-dark-15) 64%,
+        var(--color-accent) 136%
+    ) border-box;
 
   @include laptop {
     font-size: rem(14);
