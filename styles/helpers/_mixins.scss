@@ -83,3 +83,8 @@
     background-color: var(--color-dark-15);
   }
 }
+
+@mixin mobile-text ($fontSize: 14px) {
+  font-weight: 400;
+  font-size: $fontSize;
+}

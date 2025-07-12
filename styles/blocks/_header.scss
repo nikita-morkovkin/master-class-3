@@ -24,6 +24,10 @@
 
     @include mobile {
       padding-block: rem(14);
+
+      &-link {
+        @include mobile-text(12px);
+      }
     }
   }
 

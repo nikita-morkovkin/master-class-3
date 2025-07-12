@@ -21,6 +21,11 @@
 
     @include mobile {
       row-gap: rem(20);
+
+      &-link {
+        font-weight: 400;
+        font-size: 18px;
+      }
     }
 
     &-column {
@@ -67,6 +72,8 @@
     @include mobile {
       flex-direction: column;
       row-gap: rem(20);
+      font-weight: 400;
+      font-size: 18px;
     }
 
     &-menu {

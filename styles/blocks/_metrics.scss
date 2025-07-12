@@ -22,6 +22,11 @@
       padding: rem(20);
     }
 
+    @include mobile {
+      font-weight: 400;
+      font-size: 18px;
+    }
+
     &:first-child {
       padding-left: 0;
     }
