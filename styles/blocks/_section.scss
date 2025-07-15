@@ -6,7 +6,18 @@
     background-color: var(--color-dark-10);
 
     &-inner {
-      &:has(.section-link) {
+      display: flex;
+
+      @include mobile-s {
+        flex-direction: column;
+        row-gap: rem(16);
+
+        .section__actions {
+          justify-content: center;
+        }
+      }
+
+      &:has(.section-actions) {
         display: grid;
         align-items: center;
         column-gap: 1rem;
@@ -36,8 +47,27 @@
     justify-self: start;
   }
 
+  &__title {
+    white-space: nowrap;
+
+    @include tablet {
+      white-space: normal;
+    }
+  }
+
   &__body {
     border-block: var(--border);
+  }
+
+  &__actions {
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__actions,
+  &-link {
+    width: 100%;
   }
 
   &-link {

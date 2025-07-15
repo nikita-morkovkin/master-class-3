@@ -20,6 +20,7 @@
           grid-column: -1 / 1;
           row-gap: fluid(16, 10);
           margin-top: rem(20);
+          margin-bottom: 0;
         }
 
         @include mobile {

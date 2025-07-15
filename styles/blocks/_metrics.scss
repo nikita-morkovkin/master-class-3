@@ -1,14 +1,48 @@
 @use '../helpers' as *;
 
 .metrics {
+  --columns: 3;
+
+  &--4-cols {
+    --columns: 4;
+
+    text-align: center;
+
+    @include tablet-above {
+      .metrics__item:nth-child(4n) {
+        padding-right: 0;
+      }
+    }
+
+    @include tablet {
+      --columns: 2;
+
+      padding-inline: 0;
+
+      .metrics__item {
+        border-bottom: var(--border);
+        &:nth-child(odd) {
+          padding-left: var(--container-padding-x);
+        }
+
+        &:nth-child(even) {
+          padding-right: var(--container-padding-x);
+          border-right: none;
+        }
+      }
+    }
+  }
+
   &__list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(var(--columns), 1fr);
   }
 
   &__item {
     display: flex;
     flex-direction: column-reverse;
+    justify-content: start;
+    align-items: start;
     row-gap: rem(10);
     padding: rem(50);
 
@@ -23,8 +57,7 @@
     }
 
     @include mobile {
-      font-weight: 400;
-      font-size: 18px;
+      @include mobile-text(18px);
     }
 
     &:first-child {
@@ -34,10 +67,19 @@
     &:not(:last-child) {
       border-right: var(--border);
     }
+
+    &.columns-4 {
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &__value {
     font-weight: 600;
+  }
+
+  &__key {
+    @include mobile-text(14px);
   }
 
   &__sign {

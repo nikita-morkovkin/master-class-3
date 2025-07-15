@@ -73,5 +73,17 @@
 
   &__link {
     min-width: rem(153);
+    padding-right: rem(85);
+    padding-left: rem(85);
+
+    @include laptop {
+      padding-right: rem(54);
+      padding-left: rem(54);
+    }
+
+    @include mobile {
+      padding-right: rem(30);
+      padding-left: rem(30);
+    }
   }
 }
